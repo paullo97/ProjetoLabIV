@@ -1,4 +1,4 @@
-# lab4-finalwork
+# ProjetoLabIV - Grupo 02
 
 Integrantes 
   
@@ -8,5 +8,15 @@ Integrantes
 * Paulo Cesar
 * Vinicius Oliveira  
 
+# Comandos Github
 
-Grupo 02 
+* Clonagem 
+
+*Checkout
+
+*Branch
+
+# Banco de Dados
+
+
+# Comandos Liquibase
