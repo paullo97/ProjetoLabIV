@@ -17,6 +17,7 @@ Integrantes
 
 * Checkout
   Para utilizar esse comenado basta seguir esse exemplo 
+  
     git checkout [Nome_Branch]
     
     git checkout release 01
@@ -50,8 +51,11 @@ Integrantes
 # Comandos Liquibase
 
   Dentro do repositório do projeto executamos os seguintes comandos Maven
+  
     mvn clean 
+    
     mvn install
     
   Logo após executamos o seguinte comando para fazer o Build do projeto em Liquibase 
+  
     mvn install -Dliquibase
