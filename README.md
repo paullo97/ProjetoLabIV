@@ -12,9 +12,9 @@ Integrantes
 
 * Clonagem 
 
-*Checkout
+* Checkout
 
-*Branch
+* Branch
 
 # Banco de Dados
 
