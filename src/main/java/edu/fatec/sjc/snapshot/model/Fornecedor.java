@@ -1,45 +1,44 @@
 package edu.fatec.sjc.snapshot.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.validation.constraints.Size;
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
-import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @AllArgsConstructor
-@NoArgsConstructor
+@Data
 @Entity
-@Table(name = "fornecedor")
-
 public class Fornecedor {
-	
-	@Id
-	@GenericGenerator(strategy = "native", name = "native")
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-	private Long idFornecedor;
-	
-	@Size(max = 200)
-	@Column(name = "for_name", nullable = false)
-	private String for_name;
-	
-	@Size(max = 20)
-	@Column(name = "for_cnpj", nullable = false)
-	private String for_cnpj;
-	
-	@OneToMany(mappedBy = "produto", fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL)
-	@JoinColumn (name = "Fornecedor_idFornecedor")
-	private List<Produto> produtos;
-	
+    @Id
+    private Integer for_cnpj;
+
+    @Size(max = 100)
+    @Column(name = "for_nome", nullable = false)
+    private String for_nome;
+
+    @Column(name = "for_numero_logradouro", nullable = false)
+    private Integer for_numero_logradouro;
+
+    @OneToOne
+    @JoinColumn(name = "log_cep", unique = true, nullable = false)
+    private Logradouro log_cep;
+
+    @Column(name = "for_tel_comercial", nullable = false)
+    private Integer for_tel_comercial;
+
+    @Override
+    public String toString() {
+        return "Fornecedor {" +
+                "for_cnpj = " + for_cnpj +
+                ", for_nome = '" + for_nome + '\'' +
+                ", for_numero_logradouro = " + for_numero_logradouro +
+                ", log_cep = " + log_cep +
+                ", for_tel_comercial = " + for_tel_comercial +
+                '}';
+    }
+
+    @PrePersist
+    void prePersist() {}
 }
