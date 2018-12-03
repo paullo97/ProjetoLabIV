@@ -34,17 +34,15 @@ Integrantes
   `log_cidade` VARCHAR(50) NOT NULL,
   `log_estado` VARCHAR(30) NOT NULL,
   `log_sigla_estado` CHAR(2) NOT NULL,
-  PRIMARY KEY (`log_cep`))
-ENGINE = InnoDB
+   PRIMARY KEY (`log_cep`))
 
-
-CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
+    CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
   `cli_cpf` INT NOT NULL,
   `cli_nome` VARCHAR(200) NOT NULL,
   `cli_num_residencia` INT NOT NULL,
   `Logradouro_log_cep` INT NOT NULL,
   `Contato_con_celular` INT NOT NULL,
-  PRIMARY KEY (`cli_cpf`),
+   PRIMARY KEY (`cli_cpf`),
   INDEX `fk_Cliente_Logradouro_idx` (`Logradouro_log_cep` ASC) VISIBLE,
   INDEX `fk_Cliente_Contato1_idx` (`Contato_con_celular` ASC) VISIBLE,
   CONSTRAINT `fk_Cliente_Logradouro`
@@ -57,18 +55,14 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
     REFERENCES `mydb`.`Contato` (`con_celular`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
 
-
-CREATE TABLE IF NOT EXISTS `mydb`.`Contato` (
+    CREATE TABLE IF NOT EXISTS `mydb`.`Contato` (
   `con_celular` INT NOT NULL,
   `con_fixo` INT NULL,
   `con_comercial` INT NULL,
   PRIMARY KEY (`con_celular`))
-ENGINE = InnoDB
 
-
-CREATE TABLE IF NOT EXISTS `mydb`.`Funcionario` (
+    CREATE TABLE IF NOT EXISTS `mydb`.`Funcionario` (
   `Cliente_cli_cpf` INT NOT NULL,
   `fun_login` VARCHAR(50) NOT NULL,
   `fun_senha` VARCHAR(50) NOT NULL,
@@ -80,10 +74,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Funcionario` (
     REFERENCES `mydb`.`Cliente` (`cli_cpf`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
 
-
-CREATE TABLE IF NOT EXISTS `mydb`.`Movimento_Saida` (
+    CREATE TABLE IF NOT EXISTS `mydb`.`Movimento_Saida` (
   `Venda_ven_id` INT NOT NULL,
   `mov_data` DATE NOT NULL,
   INDEX `fk_Movimento_Saida_Venda1_idx` (`Venda_ven_id` ASC) VISIBLE,
@@ -93,10 +85,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Movimento_Saida` (
     REFERENCES `mydb`.`Venda` (`ven_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
 
-
-CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
+    CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   `ven_id` INT NOT NULL,
   `ven_data` DATE NOT NULL,
   `Cliente_cli_cpf` INT NOT NULL,
@@ -115,17 +105,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
     REFERENCES `mydb`.`Pagamento` (`pag_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
 
-
-CREATE TABLE IF NOT EXISTS `mydb`.`Pagamento` (
+    CREATE TABLE IF NOT EXISTS `mydb`.`Pagamento` (
   `pag_id` INT NOT NULL,
   `pag_descricao` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`pag_id`))
-ENGINE = InnoDB
 
-
-CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
+    CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
   `for_cnpj` INT NOT NULL,
   `for_nome` VARCHAR(100) NOT NULL,
   `for_numero_logradouro` INT NOT NULL,
@@ -138,10 +124,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
     REFERENCES `mydb`.`Logradouro` (`log_cep`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
 
-
-CREATE TABLE IF NOT EXISTS `mydb`.`Itens_venda` (
+    CREATE TABLE IF NOT EXISTS `mydb`.`Itens_venda` (
   `Venda_ven_id` INT NOT NULL,
   `Estoque_Produto_pro_id` INT NOT NULL,
   `Estoque_Fornecedor_for_cnpj` INT NOT NULL,
@@ -159,10 +143,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Itens_venda` (
     REFERENCES `mydb`.`Estoque` (`Produto_pro_id` , `Fornecedor_for_cnpj`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
 
-
-CREATE TABLE IF NOT EXISTS `mydb`.`Estoque` (
+    CREATE TABLE IF NOT EXISTS `mydb`.`Estoque` (
   `Produto_pro_id` INT NOT NULL,
   `Fornecedor_for_cnpj` INT NOT NULL,
   `est_saldo_atual` INT NOT NULL,
@@ -179,17 +161,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Estoque` (
     REFERENCES `mydb`.`Fornecedor` (`for_cnpj`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
 
-
-CREATE TABLE IF NOT EXISTS `mydb`.`Categoria` (
+    CREATE TABLE IF NOT EXISTS `mydb`.`Categoria` (
   `cat_id` INT NOT NULL,
   `cat_nome` VARCHAR(45) NULL,
   PRIMARY KEY (`cat_id`))
-ENGINE = InnoDB
 
-
-CREATE TABLE IF NOT EXISTS `mydb`.`Produto` (
+    CREATE TABLE IF NOT EXISTS `mydb`.`Produto` (
   `pro_id` INT NOT NULL,
   `pro_nome` VARCHAR(100) NOT NULL,
   `pro_valor_unitario` DOUBLE NOT NULL,
@@ -201,10 +179,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Produto` (
     REFERENCES `mydb`.`Categoria` (`cat_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
 
-
-CREATE TABLE IF NOT EXISTS `mydb`.`Movimento_Entrada` (
+    CREATE TABLE IF NOT EXISTS `mydb`.`Movimento_Entrada` (
   `Estoque_Produto_pro_id` INT NOT NULL,
   `Estoque_Fornecedor_for_cnpj` INT NOT NULL,
   `mov_data` DATE NOT NULL,
@@ -214,8 +190,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Movimento_Entrada` (
     REFERENCES `mydb`.`Estoque` (`Produto_pro_id` , `Fornecedor_for_cnpj`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
-
 
 # Comandos Liquibase
 
