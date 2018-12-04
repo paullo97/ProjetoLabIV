@@ -16,5 +16,12 @@
 	<include file="src/main/resources/dbschema/script/insertFuncionario.sql" />
 	<include file="src/main/resources/dbschema/script/insertFornecedor.sql" />
 	<include file="src/main/resources/dbschema/script/insertCategoria.sql" />
+	<include file="src/main/resources/dbschema/script/insertProduto.sql" />
+	<include file="src/main/resources/dbschema/script/insertEstoque.sql" />
+	<include file="src/main/resources/dbschema/script/insertPagamento.sql" />
+	<include file="src/main/resources/dbschema/script/insertVenda.sql" />
+	<include file="src/main/resources/dbschema/script/insertMovimentoSaida.sql" />
+	<include file="src/main/resources/dbschema/script/insertItensVenda.sql" />
+	<include file="src/main/resources/dbschema/script/insertMovimentoEntrada.sql" />
 
 </databaseChangeLog>
