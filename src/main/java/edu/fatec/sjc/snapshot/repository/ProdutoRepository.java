@@ -4,4 +4,6 @@ import edu.fatec.sjc.snapshot.model.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProdutoRepository extends JpaRepository<Produto, Integer> {
+	
+	public Produto findById(int id);
 }
