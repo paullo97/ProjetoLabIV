@@ -10,8 +10,8 @@ Integrantes
 
 # Comandos Github
 
-* Clonagem 
-  Clonar projeto para a sua máquina basta utilizando o comando a seguir: 
+* Clonagem
+	Clonar projeto para a sua máquina basta utilizando o comando a seguir: 
   
     git clone https://github.com/paullo97/ProjetoLabIV.git
 
