@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<preConditions>
+		<dbms type="mysql" />
+	</preConditions>
+	
+	<include file="src/main/resources/dbschema/script/createLogradouro.sql" />
+	<include file="src/main/resources/dbschema/script/createContato.sql" />
+	<include file="src/main/resources/dbschema/script/createCliente.sql" />
+	<include file="src/main/resources/dbschema/script/createFuncionario.sql" />
+	<include file="src/main/resources/dbschema/script/createFornecedor.sql" />
+	<include file="src/main/resources/dbschema/script/createCategoria.sql" />
+	<include file="src/main/resources/dbschema/script/createProduto.sql" />
+	<include file="src/main/resources/dbschema/script/createEstoque.sql" />
+	<include file="src/main/resources/dbschema/script/createPagamento.sql" />
+	<include file="src/main/resources/dbschema/script/createVenda.sql" />
+	<include file="src/main/resources/dbschema/script/createMovimentoSaida.sql" />
+	<include file="src/main/resources/dbschema/script/createItensVenda.sql" />
+	<include file="src/main/resources/dbschema/script/createMovimentoEntrada.sql" />
+	
+	<include file="src/main/resources/dbschema/script/insertLogradouro.sql" />
+	<include file="src/main/resources/dbschema/script/insertContato.sql" />
+	<include file="src/main/resources/dbschema/script/insertCliente.sql" />
+	<include file="src/main/resources/dbschema/script/insertFuncionario.sql" />
+	<include file="src/main/resources/dbschema/script/insertFornecedor.sql" />
+	<include file="src/main/resources/dbschema/script/insertCategoria.sql" />
+	<include file="src/main/resources/dbschema/script/insertProduto.sql" />
+	<include file="src/main/resources/dbschema/script/insertEstoque.sql" />
+	<include file="src/main/resources/dbschema/script/insertPagamento.sql" />
+	<include file="src/main/resources/dbschema/script/insertVenda.sql" />
+	<include file="src/main/resources/dbschema/script/insertMovimentoSaida.sql" />
+	<include file="src/main/resources/dbschema/script/insertItensVenda.sql" />
+	<include file="src/main/resources/dbschema/script/insertMovimentoEntrada.sql" />
+
+</databaseChangeLog>
