@@ -1,0 +1,42 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< edu.fatec.sjc:snapshot >-----------------------
+[INFO] Building Projeto Final 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ snapshot ---
+[INFO] Deleting C:\Users\magno\Documents\FATEC\4 SEM\Lab4\ProjetoLabIV\ProjetoLabIV\target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ snapshot ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 28 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ snapshot ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 31 source files to C:\Users\magno\Documents\FATEC\4 SEM\Lab4\ProjetoLabIV\ProjetoLabIV\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ snapshot ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\magno\Documents\FATEC\4 SEM\Lab4\ProjetoLabIV\ProjetoLabIV\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ snapshot ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.21.0:test (default-test) @ snapshot ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ snapshot ---
+[INFO] Building jar: C:\Users\magno\Documents\FATEC\4 SEM\Lab4\ProjetoLabIV\ProjetoLabIV\target\snapshot-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.0.6.RELEASE:repackage (default) @ snapshot ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ snapshot ---
+[INFO] Installing C:\Users\magno\Documents\FATEC\4 SEM\Lab4\ProjetoLabIV\ProjetoLabIV\target\snapshot-0.0.1-SNAPSHOT.jar to C:\Users\magno\.m2\repository\edu\fatec\sjc\snapshot\0.0.1-SNAPSHOT\snapshot-0.0.1-SNAPSHOT.jar
+[INFO] Installing C:\Users\magno\Documents\FATEC\4 SEM\Lab4\ProjetoLabIV\ProjetoLabIV\pom.xml to C:\Users\magno\.m2\repository\edu\fatec\sjc\snapshot\0.0.1-SNAPSHOT\snapshot-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6.543 s
+[INFO] Finished at: 2018-12-09T17:26:14-02:00
+[INFO] ------------------------------------------------------------------------

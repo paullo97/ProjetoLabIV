@@ -11,18 +11,31 @@ Integrantes
 # Comandos Github
 
 * Clonagem 
-  Para a clonagem do projeto para a sua maquina basta utilizar o comando 'git clone' seguido da URL do repositorio no github. 
+  Clonar projeto para a sua máquina basta utilizando o comando a seguir: 
   
     git clone https://github.com/paullo97/ProjetoLabIV.git
 
 * Checkout
-  Para utilizar esse comenado basta seguir esse exemplo 
+  Alterar para branch realease01. 
   
-    git checkout [Nome_Branch]
-    
-    Exemplo
-    
     git checkout release01
+    
+# Configurar MySQL Workbench
+
+* Abrir o MySQL Workbench e criar um novo esquema de dados chamado "lab04".
+
+* Criar um usuário chamado "lab04" como a senha "lab04". É importante que sejam utilizadas estas configurações, pois são elas que estão no arquivo "Application.properties" e "liquibase.properties". 
+
+* Conceder permissão de DBA para o usuário lab04.
+
+# Comandos Liquibase
+
+  Dentro do repositório local que foi clonado do projeto executar os seguintes comandos:
+    
+    mvn liquibase:update 
+  
+    mvn clean install
+
     
 # Banco de Dados
   
@@ -35,7 +48,7 @@ Integrantes
       `log_cidade` VARCHAR(50) NOT NULL,
       `log_estado` VARCHAR(30) NOT NULL,
       `log_sigla_estado` CHAR(2) NOT NULL,
-       PRIMARY KEY (`log_cep`))
+       PRIMARY KEY (`log_cep`));
 
       CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
       `cli_cpf` INT NOT NULL,
@@ -55,13 +68,13 @@ Integrantes
         FOREIGN KEY (`Contato_con_celular`)
         REFERENCES `mydb`.`Contato` (`con_celular`)
         ON DELETE NO ACTION
-        ON UPDATE NO ACTION)
+        ON UPDATE NO ACTION);
 
       CREATE TABLE IF NOT EXISTS `mydb`.`Contato` (
       `con_celular` INT NOT NULL,
       `con_fixo` INT NULL,
       `con_comercial` INT NULL,
-      PRIMARY KEY (`con_celular`))
+      PRIMARY KEY (`con_celular`));
 
       CREATE TABLE IF NOT EXISTS `mydb`.`Funcionario` (
       `Cliente_cli_cpf` INT NOT NULL,
@@ -74,7 +87,7 @@ Integrantes
         FOREIGN KEY (`Cliente_cli_cpf`)
         REFERENCES `mydb`.`Cliente` (`cli_cpf`)
         ON DELETE NO ACTION
-        ON UPDATE NO ACTION)
+        ON UPDATE NO ACTION);
 
       CREATE TABLE IF NOT EXISTS `mydb`.`Movimento_Saida` (
       `Venda_ven_id` INT NOT NULL,
@@ -85,7 +98,7 @@ Integrantes
         FOREIGN KEY (`Venda_ven_id`)
         REFERENCES `mydb`.`Venda` (`ven_id`)
         ON DELETE NO ACTION
-        ON UPDATE NO ACTION)
+        ON UPDATE NO ACTION);
 
       CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
       `ven_id` INT NOT NULL,
@@ -105,12 +118,12 @@ Integrantes
         FOREIGN KEY (`Pagamento_pag_id`)
         REFERENCES `mydb`.`Pagamento` (`pag_id`)
         ON DELETE NO ACTION
-        ON UPDATE NO ACTION)
+        ON UPDATE NO ACTION);
 
       CREATE TABLE IF NOT EXISTS `mydb`.`Pagamento` (
       `pag_id` INT NOT NULL,
       `pag_descricao` VARCHAR(45) NOT NULL,
-      PRIMARY KEY (`pag_id`))
+      PRIMARY KEY (`pag_id`));
 
       CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
       `for_cnpj` INT NOT NULL,
@@ -124,7 +137,7 @@ Integrantes
         FOREIGN KEY (`Logradouro_log_cep`)
         REFERENCES `mydb`.`Logradouro` (`log_cep`)
         ON DELETE NO ACTION
-        ON UPDATE NO ACTION)
+        ON UPDATE NO ACTION);
 
       CREATE TABLE IF NOT EXISTS `mydb`.`Itens_venda` (
       `Venda_ven_id` INT NOT NULL,
@@ -143,7 +156,7 @@ Integrantes
         FOREIGN KEY (`Estoque_Produto_pro_id` , `Estoque_Fornecedor_for_cnpj`)
         REFERENCES `mydb`.`Estoque` (`Produto_pro_id` , `Fornecedor_for_cnpj`)
         ON DELETE NO ACTION
-        ON UPDATE NO ACTION)
+        ON UPDATE NO ACTION);
 
       CREATE TABLE IF NOT EXISTS `mydb`.`Estoque` (
       `Produto_pro_id` INT NOT NULL,
@@ -161,12 +174,12 @@ Integrantes
         FOREIGN KEY (`Fornecedor_for_cnpj`)
         REFERENCES `mydb`.`Fornecedor` (`for_cnpj`)
         ON DELETE NO ACTION
-        ON UPDATE NO ACTION)
+        ON UPDATE NO ACTION);
 
       CREATE TABLE IF NOT EXISTS `mydb`.`Categoria` (
       `cat_id` INT NOT NULL,
       `cat_nome` VARCHAR(45) NULL,
-      PRIMARY KEY (`cat_id`))
+      PRIMARY KEY (`cat_id`));
 
       CREATE TABLE IF NOT EXISTS `mydb`.`Produto` (
       `pro_id` INT NOT NULL,
@@ -179,7 +192,7 @@ Integrantes
         FOREIGN KEY (`Categoria_cat_id`)
         REFERENCES `mydb`.`Categoria` (`cat_id`)
         ON DELETE NO ACTION
-        ON UPDATE NO ACTION)
+        ON UPDATE NO ACTION);
 
       CREATE TABLE IF NOT EXISTS `mydb`.`Movimento_Entrada` (
       `Estoque_Produto_pro_id` INT NOT NULL,
@@ -190,7 +203,7 @@ Integrantes
         FOREIGN KEY (`Estoque_Produto_pro_id` , `Estoque_Fornecedor_for_cnpj`)
         REFERENCES `mydb`.`Estoque` (`Produto_pro_id` , `Fornecedor_for_cnpj`)
         ON DELETE NO ACTION
-        ON UPDATE NO ACTION)
+        ON UPDATE NO ACTION);
 
 * Comandos DML:
 
@@ -300,15 +313,3 @@ Integrantes
       insert into Movimento_Entrada values(08,1234567000110,STR_TO_DATE('15-12-2017','%d-%m-%Y'));
       insert into Movimento_Entrada values(09,1234567000110,STR_TO_DATE('15-09-2017','%d-%m-%Y'));
       insert into Movimento_Entrada values(10,1234567000110,STR_TO_DATE('07-12-2017','%d-%m-%Y'));
-
-# Comandos Liquibase
-
-  Dentro do repositório do projeto executamos os seguintes comandos Maven
-  
-    mvn clean 
-    
-    mvn install
-    
-  Logo após executamos o seguinte comando para fazer o Build do projeto em Liquibase 
-  
-    mvn install -Dliquibase
