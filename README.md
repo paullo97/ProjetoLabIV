@@ -11,7 +11,7 @@ Integrantes
 # Comandos Github
 
 * Clonagem 
-  Para a clonagem do projeto para a sua maquina basta utilizar o comando 'git clone' seguido da URL do github. 
+  Para a clonagem do projeto para a sua maquina basta utilizar o comando 'git clone' seguido da URL do repositorio no github. 
   
     git clone https://github.com/paullo97/ProjetoLabIV.git
 
@@ -20,7 +20,9 @@ Integrantes
   
     git checkout [Nome_Branch]
     
-    git checkout release 01
+    Exemplo
+    
+    git checkout release01
     
 # Banco de Dados
   
