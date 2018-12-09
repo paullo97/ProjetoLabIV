@@ -39,4 +39,20 @@ public class Produto {
 
     @PrePersist
     void prePersist() {}
+
+	public Integer getPro_id() {
+		return pro_id;
+	}
+
+	public String getPro_nome() {
+		return pro_nome;
+	}
+
+	public Double getPro_valor_unitario() {
+		return pro_valor_unitario;
+	}
+
+	public Categoria getCat_id() {
+		return cat_id;
+	}
 }

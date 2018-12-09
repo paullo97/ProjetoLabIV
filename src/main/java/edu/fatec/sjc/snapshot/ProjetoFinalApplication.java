@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ProjetoFinalApplication implements CommandLineRunner {
+	@SuppressWarnings("unused")
 	private static final Logger log = LoggerFactory.getLogger(ProjetoFinalApplication.class);
 
 	@Autowired

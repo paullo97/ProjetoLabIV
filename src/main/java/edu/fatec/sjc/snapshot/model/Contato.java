@@ -35,4 +35,16 @@ public class Contato {
         if (con_fixo == null) con_fixo = 0;
         if (con_comercial == null) con_comercial = 0;
     }
+
+	public Integer getCon_celular() {
+		return con_celular;
+	}
+
+	public Integer getCon_fixo() {
+		return con_fixo;
+	}
+
+	public Integer getCon_comercial() {
+		return con_comercial;
+	}
 }

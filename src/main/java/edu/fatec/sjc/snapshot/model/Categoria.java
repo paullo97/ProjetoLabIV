@@ -27,4 +27,12 @@ public class Categoria {
                 ", cat_nome = '" + cat_nome + '\'' +
                 '}';
     }
+
+	public Integer getCat_id() {
+		return cat_id;
+	}
+
+	public String getCat_nome() {
+		return cat_nome;
+	}
 }

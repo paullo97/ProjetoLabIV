@@ -45,4 +45,24 @@ public class Venda {
     @PrePersist
     void prePersist() {
     }
+
+	public Integer getVen_id() {
+		return ven_id;
+	}
+
+	public Date getVen_data() {
+		return ven_data;
+	}
+
+	public Cliente getCliente_cli_cpf() {
+		return Cliente_cli_cpf;
+	}
+
+	public Pagamento getPagamento_pag_id() {
+		return Pagamento_pag_id;
+	}
+
+	public Integer getVen_parcelas() {
+		return ven_parcelas;
+	}
 }

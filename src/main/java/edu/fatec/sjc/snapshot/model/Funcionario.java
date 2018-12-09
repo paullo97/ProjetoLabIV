@@ -2,7 +2,6 @@ package edu.fatec.sjc.snapshot.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,7 +12,8 @@ import javax.validation.constraints.Size;
 @Entity
 @Data
 public class Funcionario {
-    @Id
+
+	@Id
     private Integer Cliente_cli_cpf;
 
     @Size(max = 100)
@@ -41,4 +41,20 @@ public class Funcionario {
     @PrePersist
     void prePersist() {
     }
+
+	public Integer getCliente_cli_cpf() {
+		return Cliente_cli_cpf;
+	}
+
+	public String getFun_login() {
+		return fun_login;
+	}
+
+	public String getFun_senha() {
+		return fun_senha;
+	}
+
+	public String getFun_perfil() {
+		return fun_perfil;
+	}
 }

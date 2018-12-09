@@ -26,4 +26,12 @@ public class Pagamento {
                 ", pag_descricao = '" + pag_descricao + '\'' +
                 '}';
     }
+
+	public Integer getPag_id() {
+		return pag_id;
+	}
+
+	public String getPag_descricao() {
+		return pag_descricao;
+	}
 }

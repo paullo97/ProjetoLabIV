@@ -25,4 +25,12 @@ public class Movimento_Entrada {
                 ", mov_data = " + mov_data +
                 '}';
     }
+
+	public EstoquePK getId() {
+		return id;
+	}
+
+	public Date getMov_data() {
+		return mov_data;
+	}
 }

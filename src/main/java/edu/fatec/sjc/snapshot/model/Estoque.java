@@ -27,4 +27,16 @@ public class Estoque {
                 ", est_estoque_minimo = " + est_estoque_minimo +
                 '}';
     }
+
+	public EstoquePK getId() {
+		return id;
+	}
+
+	public Integer getEst_saldo_atual() {
+		return est_saldo_atual;
+	}
+
+	public Integer getEst_estoque_minimo() {
+		return est_estoque_minimo;
+	}
 }

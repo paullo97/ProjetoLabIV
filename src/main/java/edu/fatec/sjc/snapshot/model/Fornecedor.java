@@ -2,8 +2,6 @@ package edu.fatec.sjc.snapshot.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
@@ -41,4 +39,24 @@ public class Fornecedor {
 
     @PrePersist
     void prePersist() {}
+
+	public Integer getFor_cnpj() {
+		return for_cnpj;
+	}
+
+	public String getFor_nome() {
+		return for_nome;
+	}
+
+	public Integer getFor_numero_logradouro() {
+		return for_numero_logradouro;
+	}
+
+	public Logradouro getLog_cep() {
+		return log_cep;
+	}
+
+	public Integer getFor_tel_comercial() {
+		return for_tel_comercial;
+	}
 }

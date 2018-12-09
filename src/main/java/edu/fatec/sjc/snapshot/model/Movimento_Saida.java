@@ -25,4 +25,12 @@ public class Movimento_Saida {
                 ", mov_data = " + mov_data +
                 '}';
     }
+
+	public Venda getVenda_ven_id() {
+		return Venda_ven_id;
+	}
+
+	public Date getMov_data() {
+		return mov_data;
+	}
 }

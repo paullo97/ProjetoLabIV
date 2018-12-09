@@ -50,4 +50,28 @@ public class Logradouro {
 
     @PrePersist
     void prePersist() {}
+
+	public Integer getLog_cep() {
+		return log_cep;
+	}
+
+	public String getLog_nome() {
+		return log_nome;
+	}
+
+	public String getLog_bairro() {
+		return log_bairro;
+	}
+
+	public String getLog_cidade() {
+		return log_cidade;
+	}
+
+	public String getLog_estado() {
+		return log_estado;
+	}
+
+	public String getLog_sigla_estado() {
+		return log_sigla_estado;
+	}
 }

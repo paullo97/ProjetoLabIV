@@ -16,4 +16,12 @@ public class EstoquePK {
     @ManyToOne
     @JoinColumn(name = "for_cnpj", unique = true, nullable = false)
     private Fornecedor for_cnpj;
+
+	public Produto getPro_id() {
+		return pro_id;
+	}
+
+	public Fornecedor getFor_cnpj() {
+		return for_cnpj;
+	}
 }

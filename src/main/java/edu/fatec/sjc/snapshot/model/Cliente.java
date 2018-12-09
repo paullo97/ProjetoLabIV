@@ -42,4 +42,24 @@ public class Cliente {
 
     @PrePersist
     void prePersist() {}
+
+	public Integer getCli_cpf() {
+		return cli_cpf;
+	}
+
+	public String getCli_nome() {
+		return cli_nome;
+	}
+
+	public Integer getCli_num_residencia() {
+		return cli_num_residencia;
+	}
+
+	public Integer getLogradouro_log_cep() {
+		return Logradouro_log_cep;
+	}
+
+	public Contato getCon_celular() {
+		return con_celular;
+	}
 }
