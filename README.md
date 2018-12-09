@@ -11,12 +11,14 @@ Integrantes
 # Comandos Github
 
 * Clonagem
+	
 	Clonar projeto para a sua máquina basta utilizando o comando a seguir: 
   
     git clone https://github.com/paullo97/ProjetoLabIV.git
 
 * Checkout
-  Alterar para branch realease01. 
+
+	Alterar para branch realease01. 
   
     git checkout release01
     
