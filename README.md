@@ -12,7 +12,7 @@ Integrantes
 
 * Clonagem
 	
-	Clonar projeto para a sua máquina basta utilizando o comando a seguir: 
+	Clonar projeto para a sua máquina utilizando o comando a seguir: 
   
     git clone https://github.com/paullo97/ProjetoLabIV.git
 
@@ -30,7 +30,7 @@ Integrantes
 
 * Conceder permissão de DBA para o usuário lab04.
 
-# Comandos Liquibase
+# Comandos para fazer o build do projeto
 
   Dentro do repositório local que foi clonado do projeto executar os seguintes comandos:
     
