@@ -26,9 +26,7 @@ Integrantes
   
 * Comandos DDL: 
   
-      create database Fatec; 
-
-      CREATE TABLE IF NOT EXISTS `mydb`.`Logradouro` (
+      CREATE TABLE IF NOT EXISTS `lab04`.`Logradouro` (
       `log_cep` INT NOT NULL,
       `log_nome` VARCHAR(100) NOT NULL,
       `log_bairro` VARCHAR(45) NOT NULL,
